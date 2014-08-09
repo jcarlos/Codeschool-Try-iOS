@@ -18,11 +18,13 @@
     UIViewController *colorTouchVC = [[UIViewController alloc] init];
     
     UIView *colorView = [[UIView alloc] initWithFrame: viewRect];
-    colorView.backgroundColor = [UIColor yellowColor];
+    //Change the backgroundColor on the view to a UIColor with these values: red: 0.462, green: 0.749, blue: 0.937, and an alpha of 1.0, which should be this color:
+    colorView.backgroundColor = [UIColor colorWithRed:0.462 green:0.749 blue:0.947 alpha:1.0];
     colorTouchVC.view = colorView;
     
     self.window.rootViewController = colorTouchVC;
     [self.window makeKeyAndVisible];
+    
     
     NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width);
     // Override point for customization after application launch.
