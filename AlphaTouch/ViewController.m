@@ -23,12 +23,27 @@
     colorView.backgroundColor = [UIColor colorWithRed:0.462 green:0.749 blue:0.947 alpha:1.0];
     self.view = colorView;
 	// Do any additional setup after loading the view, typically from a nib.
-    */
     self.view.backgroundColor = [UIColor yellowColor];
-    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     firstButton.frame = CGRectMake(120, 100, 80, 44);
-    [firstButton setTitle: @"Tap me!" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Tap me!" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Ouch" forState:UIControlStateHighlighted];
     [self.view addSubview:firstButton];
+   */
+    
+    self.view.backgroundColor = [UIColor yellowColor];
+    UIButton *blueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    blueButton.frame = CGRectMake(120, 100, 80, 44);
+    [blueButton setTitle:@"Make blue!" forState:UIControlStateNormal];
+    [blueButton addTarget:self action:@selector(buttonPressed:) forControlEvents: UIControlEventTouchUpInside];
+    [self.view addSubview:blueButton];
+
+}
+
+- (void) buttonPressed:(UIButton *) sender
+{
+    NSLog(@"Button pressed");
+    self.view.backgroundColor = [UIColor blueColor];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
