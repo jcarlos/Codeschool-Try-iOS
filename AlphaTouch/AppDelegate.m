@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -15,14 +16,9 @@
     CGRect viewRect = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:viewRect];
     
-    UIViewController *colorTouchVC = [[UIViewController alloc] init];
+    self.viewController = [[ViewController alloc] init];
     
-    UIView *colorView = [[UIView alloc] initWithFrame: viewRect];
-    //Change the backgroundColor on the view to a UIColor with these values: red: 0.462, green: 0.749, blue: 0.937, and an alpha of 1.0, which should be this color:
-    colorView.backgroundColor = [UIColor colorWithRed:0.462 green:0.749 blue:0.947 alpha:1.0];
-    colorTouchVC.view = colorView;
-    
-    self.window.rootViewController = colorTouchVC;
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
     

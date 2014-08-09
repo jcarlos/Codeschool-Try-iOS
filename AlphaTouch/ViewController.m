@@ -17,6 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+    UIView *colorView = [[UIView alloc] initWithFrame: viewRect];
+    //Change the backgroundColor on the view to a UIColor with these values: red: 0.462, green: 0.749, blue: 0.937, and an alpha of 1.0, which should be this color:
+    colorView.backgroundColor = [UIColor colorWithRed:0.462 green:0.749 blue:0.947 alpha:1.0];
+    self.view = colorView;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
