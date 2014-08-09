@@ -44,6 +44,7 @@
 {
     NSLog(@"Button pressed");
     self.view.backgroundColor = [UIColor blueColor];
+    [sender removeFromSuperview];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
